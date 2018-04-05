@@ -14,5 +14,3 @@ plt.plot(gdp_cap, life_exp)
 
 # Display the plot
 plt.show()
-
-print(life_exp)
