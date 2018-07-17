@@ -13,3 +13,11 @@ print(csv_data.shape)
 
 # Return the columns of the csv file
 print(csv_data.columns)
+
+# Return the info the csv file 
+print(csv_data.info())
+
+# Return 
+print('-' * 50)
+print(csv_data.database)
+print(csv_data.database.value_counts(dropna = False))
