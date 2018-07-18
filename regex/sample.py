@@ -12,10 +12,10 @@ capitalized_words = r"[A-Z]\w+"
 print(re.findall(capitalized_words, my_string))
 
 # Split my_string on spaces and print the result
-spaces = r"\s"
+spaces = r"\s+"
 print(re.split(spaces, my_string))
 
 # Find all digits in my_string and print the result
-digits = r"\d"
+digits = r"\d+"
 print(re.findall(digits, my_string))
 
