@@ -1,20 +1,17 @@
 # Import the necessary modules
 from nltk.tokenize import regexp_tokenize
-from nltk.tokenize import TweetTokenizer
+from nltk.tokenize import word_tokenize
 
-# Define a regex pattern to find hashtags: pattern1
-pattern1 = r"#\w+"
+german_text = 'Wann gehen wir zum Pizza? 🍕 Und fährst du mit Über? 🚕'
+# Tokenize and print all words in german_text
+all_words = word_tokenize(german_text)
+print(all_words)
 
-# Use the pattern on the first tweet in the tweets list
-TweetTokenizer(tweets[0], pattern1)
+# Tokenize and print only capital words
+capital_words = r"[A-ZÜ]\w+"
+print(regexp_tokenize(german_text, capital_words))
 
-# Write a pattern that matches both mentions and hashtags
-pattern2 = r"([\@]\w+)"
-
-# Use the pattern on the last tweet in the tweets list
-regexp_tokenize(tweets[-1], pattern2)
-
-# Use the TweetTokenizer to tokenize all tweets into one list
-tknzr = TweetTokenizer
-all_tokens = [tknzr for t in tweets]
+# Tokenize and print only emoji
+emoji = "['\U0001F300-\U0001F5FF'|'\U0001F600-\U0001F64F'|'\U0001F680-\U0001F6FF'|'\u2600-\u26FF\u2700-\u27BF']"
+print(regexp_tokenize(german_text, emoji))
 
